@@ -76,10 +76,10 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull shkitskiy/infra_info
+          sudo docker pull shkitskiy/infra_actions
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5001:5000 shkitskiy/infra_info
+          sudo docker run --rm -d -p 5001:5000 shkitskiy/infra_actions
 
   send_message:
     runs-on: ubuntu-latest
